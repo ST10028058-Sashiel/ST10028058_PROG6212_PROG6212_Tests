@@ -30,9 +30,9 @@ using Sashiel_ST10028058_PROG6212_Part2.Data;
         }
 
         // Helper method to create a fully valid Claim instance
-        private Claim CreateValidClaim(int id, string status = "Pending")
+        private Claims CreateValidClaim(int id, string status = "Pending")
         {
-            return new Claim
+            return new Claims
             {
                 ClaimId = id,
                 LecturerName = "John Doe",  // Required field
@@ -87,7 +87,7 @@ using Sashiel_ST10028058_PROG6212_Part2.Data;
 
             // Assert
             Assert.NotNull(result);
-            var model = Assert.IsAssignableFrom<List<Claim>>(result.Model);
+            var model = Assert.IsAssignableFrom<List<Claims>>(result.Model);
             Assert.Equal(2, model.Count); // Ensure both claims are retrieved
         }
 
